@@ -7,9 +7,9 @@ export class LogInterceptor implements NestInterceptor {
     return next.handle().pipe(
       tap(() => {
         const request = context.switchToHttp().getRequest();
-        // console.log(`Url: ${request.url}`);
-        // console.log(`Method: ${request.method}`);
-        // console.log(`Execução levou: ${Date.now() - dt} milisegundos `);
+        console.log(`Url: ${request.url}`);
+        console.log(`Method: ${request.method}`);
+        console.log(`Execução levou: ${Date.now() - dt} milisegundos `);
       }),
     );
   }
